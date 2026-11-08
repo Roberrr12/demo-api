@@ -1,0 +1,24 @@
+# --- Git y CI ---
+.git
+.gitignore
+.github
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Docs y local ---
+*.md
+docs/
+tests/
+.env
+.vscode/
+.idea/
+.DS_Store
