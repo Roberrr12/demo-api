@@ -4,6 +4,10 @@ import time
 from fastapi import FastAPI, Request
 from prometheus_client import Counter, Gauge, Histogram, make_asgi_app
 
+def leer_version() -> str:
+    return os.getenv("APP_VERSION", "dev")
+
+APP_VERSION = leer_version()
 APP_VERSION = os.getenv("APP_VERSION", "dev")
 SERVICE = "demo-api"
 
@@ -25,7 +29,7 @@ def readyz():
     # Aquí irá la comprobación de la base de datos.
     # Si no está lista: raise HTTPException(status_code=503, detail="db not ready")
     return {"status": "ok"}
-
+ 
 
 REQUEST_COUNT = Counter(
     "http_requests_total",
