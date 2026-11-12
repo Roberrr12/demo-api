@@ -31,10 +31,19 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt -r requirements-dev.txt
 uvicorn app.main:app --reload
 
+
 ## Imagen de contenedor
 
 <!-- TODO: por que multi-stage y por que non-root. -->
 
 ## CI/CD
 
-<!-- TODO: que hace el pipeline y por que NO despliega (ver ADR de GitOps). -->
+<!-- TODO: que hace el pipeline y por que NO despliega . -->
+
+```
+## Validar
+```bash
+curl localhost:8000/            # identidad y versión
+curl localhost:8000/livez       # {"status":"ok"}
+curl localhost:8000/readyz      # {"status":"ok"}
+curl localhost:8000/metrics     # formato Prometheus```
